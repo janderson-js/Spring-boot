@@ -37,7 +37,7 @@ public class GreetingsController {
     	usuario.setNome(name);
     	usuarioRepository.save(usuario);
     	
-        return "Helloasdas " + name + "!";
+        return "Hello " + name + "!";
     }
     
     @GetMapping(value = "listatodos")
