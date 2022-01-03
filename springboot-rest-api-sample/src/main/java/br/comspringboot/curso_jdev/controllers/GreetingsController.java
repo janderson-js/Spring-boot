@@ -92,4 +92,13 @@ public class GreetingsController {
     	return new ResponseEntity<Usuario>(user,HttpStatus.OK);
     }
     
+    @GetMapping(value = "buscarPorNome")
+    @ResponseBody
+    public ResponseEntity<List<Usuario>> buscarPorNome(@RequestParam(name = "name") String nome){
+    	
+    	List<Usuario> user = usuarioRepository.buscarPorNome(nome.trim().toUpperCase());
+    	
+    	return new ResponseEntity<List<Usuario>>(user,HttpStatus.OK);
+    }
+    
 }
